@@ -85,7 +85,7 @@ def main():
             st.write("- Seek professional help or counseling to develop coping strategies.")
             st.write("- Practice self-care and prioritize your mental health.")
             st.write("- Consider lifestyle changes to reduce overall stress levels.")
-            st.write("- Connect with a support group or community for additional support.")
+            st.write("- Connect with a support group or community for additional support.\n\n")
         
         st.write("Note: It's always better to seek professional help if you're experiencing high levels of stress.")
 
