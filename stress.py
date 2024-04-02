@@ -1,12 +1,10 @@
 import streamlit as st
 
 def reverse_score(score):
-    """Reverse the score for questions 4, 5, 7, and 8."""
     return 4 - score
 
 def calculate_pss_score(answers):
-    """Calculate the PSS score."""
-    reversed_indices = [3, 4, 6, 7]
+    reversed_indices = [3, 4, 6, 7]  # Indices of questions to reverse score
     total_score = 0
     for i, ans in enumerate(answers):
         if i in reversed_indices:
@@ -15,7 +13,6 @@ def calculate_pss_score(answers):
     return total_score
 
 def determine_stress_level(score):
-    """Determine the stress level based on the PSS score."""
     if score <= 13:
         return "Low stress"
     elif 14 <= score <= 26:
@@ -25,17 +22,32 @@ def determine_stress_level(score):
 
 def main():
     st.sidebar.title("About Perceived Stress Scale (PSS)")
-    st.sidebar.write("""
-    The Perceived Stress Scale (PSS) is a classic stress assessment instrument developed in 1983. It helps measure individual stress levels based on feelings and thoughts over the last month.
-    """)
+    st.sidebar.write(
+        """
+        A more precise measure of personal stress can be determined by using a variety of instruments that
+        have been designed to help measure individual stress levels. The first of these is called the Perceived
+        Stress Scale.
+
+        The Perceived Stress Scale (PSS) is a classic stress assessment instrument. The tool, while originally
+        developed in 1983, remains a popular choice for helping us understand how different situations affect
+        our feelings and our perceived stress. The questions in this scale ask about your feelings and thoughts
+        during the last month. In each case, you will be asked to indicate how often you felt or thought a certain
+        way. Although some of the questions are similar, there are differences between them and you should
+        treat each one as a separate question. The best approach is to answer fairly quickly. That is, don’t try to
+        count up the number of times you felt a particular way; rather indicate the alternative that seems like
+        a reasonable estimate.
+        """
+    )
 
     st.title("Perceived Stress Scale (PSS) Determination App")
-    st.write("For each question, choose from the following alternatives:\n"
-             "0 - never\n"
-             "1 - almost never\n"
-             "2 - sometimes\n"
-             "3 - fairly often\n"
-             "4 - very often\n\n\n")
+    st.write(
+        "For each question, choose from the following alternatives:\n"
+        "0 - never\n"
+        "1 - almost never\n"
+        "2 - sometimes\n"
+        "3 - fairly often\n"
+        "4 - very often\n\n\n"
+    )
     st.header("Answer the following questions to determine your perceived stress level.")
 
     questions = [
@@ -78,7 +90,7 @@ def main():
             st.write("- Practice self-care and prioritize your mental health.")
             st.write("- Consider lifestyle changes to reduce overall stress levels.")
             st.write("- Connect with a support group or community for additional support.\n\n")
-        
+
         st.write("Note: It's always better to seek professional help if you're experiencing high levels of stress.")
 
 if __name__ == "__main__":
