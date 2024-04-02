@@ -21,7 +21,29 @@ def determine_stress_level(score):
         return "High stress"
 
 def main():
-    st.title("Perceived Stress Scale (PSS) Determination App")
+    st.sidebar.title("About Perceived Stress Scale (PSS)")
+    st.sidebar.write("""
+    A more precise measure of personal stress can be determined by using a variety of instruments that
+    have been designed to help measure individual stress levels. The first of these is called the Perceived
+    Stress Scale.
+    
+    The Perceived Stress Scale (PSS) is a classic stress assessment instrument. The tool, while originally
+    developed in 1983, remains a popular choice for helping us understand how different situations affect
+    our feelings and our perceived stress. The questions in this scale ask about your feelings and thoughts
+    during the last month. In each case, you will be asked to indicate how often you felt or thought a certain
+    way. Although some of the questions are similar, there are differences between them and you should
+    treat each one as a separate question. The best approach is to answer fairly quickly. That is, don’t try to
+    count up the number of times you felt a particular way; rather indicate the alternative that seems like
+    a reasonable estimate.
+    """)
+
+    st.title("Perceived Stress Scale (PSS) Determination App\n")
+    st.write("For each question, choose from the following alternatives:\n"
+             "0 - never\n"
+             "1 - almost never\n"
+             "2 - sometimes\n"
+             "3 - fairly often\n"
+             "4 - very often\n\n")
     st.write("Answer the following questions to determine your perceived stress level.")
 
     questions = [
@@ -39,7 +61,7 @@ def main():
 
     answers = []
     for i, question in enumerate(questions):
-        answer = st.selectbox(f"{i+1}. {question}", options=[0, 1, 2, 3, 4])
+        answer = st.slider(f"{i+1}. {question}", min_value=0, max_value=4, step=1)
         answers.append(answer)
 
     if st.button("Calculate PSS Score"):
