@@ -56,7 +56,7 @@ def main():
         "In the last month, how often have you been able to control irritations in your life?",
         "In the last month, how often have you felt that you were on top of things?",
         "In the last month, how often have you been angered because of things that happened that were outside of your control?",
-        "In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?"
+        "In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?\n"
     ]
 
     answers = []
