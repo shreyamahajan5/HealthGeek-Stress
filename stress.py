@@ -40,14 +40,12 @@ def main():
     )
 
     st.title("Perceived Stress Scale (PSS) Determination App")
-    st.write(
-        "For each question, choose from the following alternatives:\n"
-        "0 - never\n"
-        "1 - almost never\n"
-        "2 - sometimes\n"
-        "3 - fairly often\n"
-        "4 - very often\n\n\n"
-    )
+        st.write("For each question, choose from the following alternatives:")
+        st.write("0 - never")
+        st.write("1 - almost never")
+        st.write("2 - sometimes")
+        st.write("3 - fairly often")
+        st.write("4 - very often")
     st.header("Answer the following questions to determine your perceived stress level.")
 
     questions = [
