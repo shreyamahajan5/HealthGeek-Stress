@@ -44,7 +44,7 @@ def main():
              "2 - sometimes\n\n"
              "3 - fairly often\n\n"
              "4 - very often\n\n\n")
-    st.write("Answer the following questions to determine your perceived stress level.")
+    st.header("Answer the following questions to determine your perceived stress level.")
 
     questions = [
         "In the last month, how often have you been upset because of something that happened unexpectedly?",
