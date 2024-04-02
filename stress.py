@@ -37,12 +37,12 @@ def main():
     a reasonable estimate.
     """)
 
-    st.title("Perceived Stress Scale (PSS) Determination App\n")
-    st.write("For each question, choose from the following alternatives:\n\n"
-             "0 - never\n\n"
-             "1 - almost never\n\n"
-             "2 - sometimes\n\n"
-             "3 - fairly often\n\n"
+    st.title("Perceived Stress Scale (PSS) Determination App")
+    st.write("For each question, choose from the following alternatives:\n"
+             "0 - never\n"
+             "1 - almost never\n"
+             "2 - sometimes\n"
+             "3 - fairly often\n"
              "4 - very often\n\n\n")
     st.header("Answer the following questions to determine your perceived stress level.")
 
@@ -69,6 +69,25 @@ def main():
         stress_level = determine_stress_level(total_score)
         st.write(f"Your total PSS score is: {total_score}")
         st.write(f"Your stress level is: {stress_level}")
+
+        st.subheader("Mental Health Practices to Manage Stress:")
+        if stress_level == "Low stress":
+            st.write("- Practice relaxation techniques such as deep breathing, meditation, or yoga.")
+            st.write("- Maintain a healthy lifestyle with regular exercise and a balanced diet.")
+            st.write("- Engage in hobbies or activities that you enjoy.")
+            st.write("- Seek social support from friends and family.")
+        elif stress_level == "Moderate stress":
+            st.write("- In addition to the practices for low stress, consider seeking professional help or counseling.")
+            st.write("- Prioritize tasks and practice time management.")
+            st.write("- Limit exposure to stressful situations or triggers.")
+            st.write("- Take breaks and engage in stress-relieving activities throughout the day.")
+        else:
+            st.write("- Seek professional help or counseling to develop coping strategies.")
+            st.write("- Practice self-care and prioritize your mental health.")
+            st.write("- Consider lifestyle changes to reduce overall stress levels.")
+            st.write("- Connect with a support group or community for additional support.")
+        
+        st.write("Note: It's always better to seek professional help if you're experiencing high levels of stress.")
 
 if __name__ == "__main__":
     main()
